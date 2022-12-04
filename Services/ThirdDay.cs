@@ -46,14 +46,12 @@ namespace Advent.Code.Services
         public async Task<string?> FirstAsync()
         {
             var groups = await ProcessFirstAsync();
-            var max = groups?.Sum().ToString();
-            return max;
+            return $"{groups?.Sum()}";
         }
         public async Task<string?> SecondAsync()
         {
             var groups = await ProcessSecondAsync();
-            var max = groups?.Sum().ToString();
-            return max;
+            return $"{groups?.Sum()}";
         }
     }
 }

@@ -96,12 +96,12 @@ namespace Advent.Code.Services
         public async Task<string?> FirstAsync()
         {
             var groups = await ProcessAsync();
-            return groups?.Select(s => DecideFirst(s)).Sum().ToString();
+            return $"{groups?.Select(s => DecideFirst(s)).Sum()}";
         }
         public async Task<string?> SecondAsync()
         {
             var groups = await ProcessAsync();
-            return groups?.Select(s => DecideSecond(s)).Sum().ToString();
+            return $"{groups?.Select(s => DecideSecond(s)).Sum()}";
         }
     }
 }
