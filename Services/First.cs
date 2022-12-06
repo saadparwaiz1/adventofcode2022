@@ -4,12 +4,12 @@ using Advent.Code.Extensions;
 
 namespace Advent.Code.Services
 {
-    public class FirstDay : IDay
+    public class First : IDay
     {
-        private readonly ILogger<FirstDay> _logger;
+        private readonly ILogger<First> _logger;
         private readonly static string s_FILE = "Resources/1.txt";
 
-        public FirstDay(ILogger<FirstDay> logger)
+        public First(ILogger<First> logger)
         {
             _logger = logger;
         }

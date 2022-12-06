@@ -8,14 +8,14 @@ using Advent.Code.Extensions;
 
 namespace Advent.Code.Services
 {
-    public class FifthDay : IDay
+    public class Fifth : IDay
     {
 
-        private readonly ILogger<FifthDay> _logger;
+        private readonly ILogger<Fifth> _logger;
         private readonly static string s_FILE = "Resources/5.txt";
         private readonly static Regex regex = new Regex("(.)\\1{2}");
 
-        public FifthDay(ILogger<FifthDay> logger)
+        public Fifth(ILogger<Fifth> logger)
         {
             _logger = logger;
         }

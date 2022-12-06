@@ -5,12 +5,12 @@ using Advent.Code.Extensions;
 
 namespace Advent.Code.Services
 {
-    public class ThirdDay : IDay
+    public class Third : IDay
     {
-        private readonly ILogger<ThirdDay> _logger;
+        private readonly ILogger<Third> _logger;
         private readonly static string s_FILE = "Resources/3.txt";
 
-        public ThirdDay(ILogger<ThirdDay> logger)
+        public Third(ILogger<Third> logger)
         {
             _logger = logger;
         }

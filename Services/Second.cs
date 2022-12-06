@@ -4,9 +4,9 @@ using Advent.Code.Extensions;
 
 namespace Advent.Code.Services
 {
-    public class SecondDay : IDay
+    public class Second : IDay
     {
-        private readonly ILogger<SecondDay> _logger;
+        private readonly ILogger<Second> _logger;
         private readonly static string s_FILE = "Resources/2.txt";
 
         private readonly static Dictionary<string, string> s_WINS = new Dictionary<string, string>
@@ -47,7 +47,7 @@ namespace Advent.Code.Services
         private readonly static int s_WIN = 6;
         private readonly static int s_DRAW = 3;
 
-        public SecondDay(ILogger<SecondDay> logger)
+        public Second(ILogger<Second> logger)
         {
             _logger = logger;
         }
