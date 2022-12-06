@@ -14,6 +14,7 @@ var host = Host.CreateDefaultBuilder(args)
                         services.AddSingleton<SecondDay>();
                         services.AddSingleton<ThirdDay>();
                         services.AddSingleton<FourthDay>();
+                        services.AddSingleton<FifthDay>();
                     }).Build();
 
 var executor = host.Services.GetRequiredService<IExecutor>();
@@ -21,7 +22,7 @@ var logger = host.Services.GetRequiredService<ILogger<Program>>();
 var watch = new System.Diagnostics.Stopwatch();
 watch.Start();
 logger.LogInformation("Starting Execution");
-var types = new Type[] { typeof(FirstDay), typeof(SecondDay), typeof(ThirdDay), typeof(FourthDay) };
+var types = new Type[] { typeof(FirstDay), typeof(SecondDay), typeof(ThirdDay), typeof(FourthDay), typeof(FifthDay) };
 var tasks = types.Select(t => executor.ExecuteAsync(t));
 await Task.WhenAll(tasks);
 watch.Stop();

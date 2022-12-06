@@ -1,6 +1,6 @@
 namespace Advent.Code.Extensions
 {
-    public static class IOExtensions
+    public static class Extension
     {
         public static async Task<string> ReadTextAsync(this string path)
         {
@@ -10,6 +10,12 @@ namespace Advent.Code.Extensions
         public static async Task<string[]> ReadLinesAsync(this string path)
         {
             return await File.ReadAllLinesAsync(path);
+        }
+
+        public static IEnumerable<string> AddPadding(this string str, int pad)
+        {
+            var count = str.Count();
+            return count == pad ? new List<string> { string.IsNullOrWhiteSpace(str) ? "[0]" : str } : Enumerable.Repeat("[0]", count / pad).ToList();
         }
     }
 }
