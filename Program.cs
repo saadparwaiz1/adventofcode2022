@@ -18,6 +18,8 @@ var host = Host.CreateDefaultBuilder(args)
                         services.AddSingleton<Sixth>();
                         services.AddSingleton<Seventh>();
                         services.AddSingleton<Eighth>();
+                        services.AddSingleton<Ninth>();
+                        services.AddSingleton<Tenth>();
                     }).Build();
 
 var executor = host.Services.GetRequiredService<IExecutor>();
@@ -25,7 +27,7 @@ var logger = host.Services.GetRequiredService<ILogger<Program>>();
 var watch = new System.Diagnostics.Stopwatch();
 watch.Start();
 logger.LogInformation("Starting Execution");
-var types = new Type[] { typeof(First), typeof(Second), typeof(Third), typeof(Fourth), typeof(Fifth), typeof(Sixth), typeof(Seventh), typeof(Eighth) };
+var types = new Type[] { typeof(First), typeof(Second), typeof(Third), typeof(Fourth), typeof(Fifth), typeof(Sixth), typeof(Seventh), typeof(Eighth), typeof(Tenth), typeof(Ninth) };
 var tasks = types.Select(t => executor.ExecuteAsync(t));
 await Task.WhenAll(tasks);
 watch.Stop();
