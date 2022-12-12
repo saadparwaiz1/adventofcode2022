@@ -11,5 +11,9 @@ namespace Advent.Code.Extensions
         {
             return await File.ReadAllLinesAsync(path);
         }
+        public static int CalculateCount(this IEnumerable<char> extracted, IEnumerable<char> all)
+        {
+            return extracted.Count() == all.Count() ? extracted.Count() : extracted.Count() + 1;
+        }
     }
 }
